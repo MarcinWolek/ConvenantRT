@@ -58,6 +58,9 @@ void ARTObjectsController::SpawnObjects(const int Amount)
 
 	SpawnedObjects.Reserve(Amount);
 
+	FActorSpawnParameters SpawnParams;
+	SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+
 	for (int i = 0; i < Amount; i++)
 	{
 		//Randomize position
@@ -68,12 +71,12 @@ void ARTObjectsController::SpawnObjects(const int Amount)
 		FRotator RandomRotation = FRotator(0.f, RandomYaw, 0.f);
 
 		//Spawning objects
-		ARTBaseActor* SpawnedObject = GetWorld()->SpawnActor<ARTBaseActor>(SpawnObject, RandomPosition, RandomRotation);
+		ARTBaseActor* SpawnedObject = GetWorld()->SpawnActor<ARTBaseActor>(SpawnObject, RandomPosition, RandomRotation, SpawnParams);
 		SpawnedObject->OnDestroyComponentsEvent.AddDynamic(this, &ARTObjectsController::PerformOnObjectDestroyed);
 		SpawnedObjects.Add(SpawnedObject);
 
 		//Randomizing scale
-		float RandomValue = FMath::RandRange(.5f, 1.0f);
+		float RandomValue = FMath::RandRange(.7f, 1.0f);
 		FVector RandomizedScale = FVector(RandomValue, RandomValue, RandomValue);
 		SpawnedObject->SetActorScale3D(RandomizedScale);
 	}
