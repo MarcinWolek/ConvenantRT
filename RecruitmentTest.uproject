@@ -1,0 +1,16 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{8F822CC7-47A2-8A97-0916-6FB7EFA3B1E0}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "RecruitmentTest",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	]
+}

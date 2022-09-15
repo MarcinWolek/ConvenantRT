@@ -1,0 +1,60 @@
+### Basic ignore folders ###
+DerivedDataCache
+Saved
+
+### Build ###
+Build/*
+
+# 4.24 or older
+!Build/PS4/
+Build/PS4/*
+!Build/PS4/*.jpg
+!Build/PS4/sce_sys
+
+!Build/XBoxOne/
+Build/XBoxOne/*
+!Build/XBoxOne/Resources/
+
+!Build/Switch
+Build/Switch/*
+!Build/Switch/Resources/
+
+# 4.25 or newer
+Platforms/PS4/Build/*
+!Platforms/PS4/Build/*.jpg
+!Platforms/PS4/Build/sce_sys
+!Platforms/PS4/Build/titledata
+!Platforms/PS4/Build/TitleConfiguration.json
+
+Releases/*
+
+### Binaries ###
+Binaries/*
+
+### Visual Studio cryptic project file location nonsense ###
+Intermediate/*
+Plugins/**/Intermediate/*
+Plugins/**/Binaries/*
+**/.vs/*
+*.sdf
+*.suo
+*.VC.db
+enc_temp_folder/*
+*.sln
+
+### Other envs ###
+*.opensdf
+*.opendb
+*.xcodeproj
+*.xcworkspace
+
+
+
+### System Trash ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
